@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { createRoot } from 'react-dom/client';
+import React from 'react';
 import App from './App';
 
 @customElement('ha-todo-card')

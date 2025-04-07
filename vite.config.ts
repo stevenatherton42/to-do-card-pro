@@ -10,10 +10,12 @@ export default defineConfig({
     lib: {
       entry: 'src/ha-todo-card.ts',
       formats: ['es'],
-      fileName: 'ha-todo-card',
+      fileName: () => 'ha-todo-card.js',
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'lit'],
     },
+    outDir: 'dist',
+    emptyOutDir: true,
   },
 });
