@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Home Assistant Theme Compatible Classes */
+@layer components {
+  .ha-card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+    background: var(--card-background-color, white);
+    color: var(--primary-text-color, #1a1a1a);
+  }
+
+  .ha-card-header {
+    @apply text-xl font-semibold p-4;
+    color: var(--primary-text-color, #1a1a1a);
+    border-bottom: 1px solid var(--divider-color, #e5e7eb);
+  }
+
+  .ha-card-content {
+    @apply p-4;
+    height: calc(100% - 4rem); /* Subtract header height */
+  }
+
+  .ha-todo-container {
+    @apply overflow-y-auto;
+    height: calc(100% - 5rem); /* Subtract form height */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color, #3B82F6) transparent;
+  }
+
+  .ha-todo-container::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .ha-todo-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .ha-todo-container::-webkit-scrollbar-thumb {
+    @apply rounded-full;
+    background-color: var(--primary-color, #3B82F6);
+    opacity: 0.5;
+  }
+
+  .ha-input {
+    @apply px-3 py-2 rounded text-sm border transition-colors;
+    background: var(--input-background, white);
+    color: var(--primary-text-color, #1a1a1a);
+    border-color: var(--input-border-color, #e5e7eb);
+    &:focus {
+      @apply outline-none ring-2;
+      border-color: var(--primary-color, #3B82F6);
+      ring-color: color-mix(in srgb, var(--primary-color, #3B82F6) 25%, transparent);
+    }
+  }
+
+  .ha-select {
+    @apply px-2 py-2 rounded text-sm border transition-colors;
+    background: var(--input-background, white);
+    color: var(--primary-text-color, #1a1a1a);
+    border-color: var(--input-border-color, #e5e7eb);
+    &:focus {
+      @apply outline-none ring-2;
+      border-color: var(--primary-color, #3B82F6);
+      ring-color: color-mix(in srgb, var(--primary-color, #3B82F6) 25%, transparent);
+    }
+  }
+
+  .ha-icon-button {
+    @apply p-2 rounded-md transition-colors;
+    color: var(--primary-color, #3B82F6);
+    &:hover {
+      background: var(--primary-color-opacity, rgba(59, 130, 246, 0.1));
+    }
+  }
+
+  .ha-icon-button-secondary {
+    @apply p-1 rounded-md transition-colors;
+    color: var(--secondary-text-color, #6b7280);
+    &:hover {
+      background: var(--secondary-color-opacity, rgba(107, 114, 128, 0.1));
+    }
+  }
+
+  .ha-icon {
+    @apply w-4 h-4;
+    color: inherit;
+  }
+
+  .ha-text {
+    color: var(--primary-text-color, #1a1a1a);
+  }
+
+  .ha-text-secondary {
+    color: var(--secondary-text-color, #6b7280);
+  }
+
+  .ha-text-disabled {
+    color: var(--disabled-text-color, #6b7280);
+  }
+
+  .ha-todo-item {
+    @apply flex items-center justify-between p-3 rounded-md transition-all;
+    &:hover {
+      transform: translateX(2px);
+    }
+  }
+
+  .ha-todo-completed {
+    @apply bg-opacity-50;
+    background-color: var(--disabled-background-color, #f3f4f6);
+  }
+
+  .completed-todos {
+    @apply pt-4 mt-4;
+    border-top: 1px solid var(--divider-color, #e5e7eb);
+  }
+}
