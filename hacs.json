@@ -1,6 +1,8 @@
 {
-  "name": "Todo Card",
-  "render_readme": true,
+  "name": "To DO Card Pro",
   "filename": "ha-todo-card.js",
-  "content_in_root": false
+  "type": "module",
+  "render_readme": true,
+  "domains": ["lovelace"],
+  "country": "worldwide"
 }
